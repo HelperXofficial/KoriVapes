@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;700&display=swap" rel="stylesheet">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kori VAPE - 마약 중독자</title>
+<style>
+  /* Korean-inspired styling */
+body {
+    font-family: 'Noto Sans KR', sans-serif;
+    background-color: #f7f7f7;
+    margin: 0;
+    padding: 0;
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 100vh;
+    box-sizing: border-box;
+    width:100%;
+}
+
+.header {
+    text-align: center;
+    background-color: #222;
+    color: #fff;
+    padding: 5px 10px;
+    width:100%;
+    max-width: 1200px;
+    margin:0;
+}
+
+.header-top {
+    background-color: #444;
+    color: #fff;
+    padding: 5px 3px;
+    font-size: 1em;
+    width:100%;
+    max-width: 1200px;
+    margin:0;
+}
+
+.controls {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 10px;
+}
+
+.products {
+    padding: 20px;
+    text-align: center;
+}
+
+.product-list {
+    display: block;  /* Change to block to stack vertically */
+    margin: 0 auto;
+    max-width: 100%; /* Limit the width for a clean layout */
+}
+
+.product {
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 15px;
+    margin-bottom: 20px; /* Add space between products */
+    text-align: center;
+}
+
+.product img {
+    width: 100%;
+    max-width: 300px; /* Limit the width of the product images */
+    border-radius: 5px;
+    margin-bottom: 10px;
+}
+
+.price {
+    font-size: 1.2em;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+button {
+    background-color: #333;
+    color: #fff;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+button:hover {
+    background-color: #555;
+}
+
+/* Footer styling */
+.footer {
+    background-color: #222;
+    color: #fff;
+    text-align: center;
+    padding: 5px 10px;
+    position: relative; /* Position relative for footer */
+    width: 100%;
+    bottom: 0;
+    margin-top: 20px;  /* Add margin-top to avoid overlap with content */
+}
+.sold-out {
+  color: red;
+  font-size: 1.2em;
+  margin-bottom: 10px;
+}
+.welcome-section {
+  position: relative;
+  text-align: center;
+  margin-top: 30px;
+}
+.welcome-section img {
+  width:102.5%;
+  max-width: 1200px;
+  margin-bottom: 20px;
+  margin-top: 20px;
+}
+.welcome-section h3 {
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    font-size: 1.8em;
+    font-weight: bold;
+    }
+
+.welcome-section p {
+    font-size: 1.2em;
+    color: white;
+    position: absolute;
+    top:60%;
+    left:50%;
+    transform: translate(-50%);
+}
+</style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="header-top">
+            <p>We Offer Free Shipping On Prepaid Orders</p>
+        </div>
+        <h1>Kori VAPE</h1>
+        <p>고품질 전자 담배를 만나보세요</p>
+        <div class="controls">
+            <select id="language-select" onchange="changeLanguage()">
+                <option value="ko">한국어</option>
+                <option value="en">English</option>
+            </select>
+            <select id="currency-select" onchange="changeCurrency()">
+                <option value="KRW">KRW</option>
+                <option value="USD">USD</option>
+            </select>
+        </div>
+    </header>
+<section class="welcome-section">
+  <img src="https://i.ibb.co/88BChRp/vape-3202608.jpg" alt="Vape Welcome Image">
+  <h3>코리에 오신 것을 환영합니다</h3>
+<p>고객 서비스 및 베이핑 경험이 우리의 최우선 사항입니다</p>
+</section>
+    <!-- Featured Products Section -->
+    <section class="products">
+        <h2>우리의 전자담배 제품</h2>
+        <div class="product-list">
+            <div class="product">
+                            <div class="sold-out">Sold Out</div>
+                <img src="https://i.ibb.co/BwL3fM4/LCwi-Q179-Qga-ED9-XArr-Wyfw.webp" alt="Emerald Green Vape">
+                <h3>Emerald Green</h3>
+                <p class="price" id="price-green">₩1580.14 ₩1̶9̶9̶9̶</p>
+                <button onclick="placeOrder()">주문하기</button>
+            </div>
+            <div class="product">
+              <div class="sold-out">Sold Out</div>
+                <img src="royal_blue.jpg" alt="Royal Blue Vape">
+                <h3>Royal Blue</h3>
+                <p class="price" id="price-blue">₩1580.14 ₩1̶9̶9̶9̶</p>
+                <button onclick="placeOrder()">주문하기</button>
+            </div>
+            <div class="product">
+                            <div class="sold-out">Sold Out</div>
+                <img src="matte_black.jpg" alt="Matte Black Vape">
+                <h3>Matte Black</h3>
+                <p class="price" id="price-black">₩1580.14 ₩1̶9̶9̶9̶</p>
+                <button onclick="placeOrder()">주문하기</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <p>© 2024, Kori Vapes India</p>
+    </footer>
+
+    <script>// Currency and Language Configuration
+const prices = {
+    green: { USD: 1.13 , KRW: 1580.14 },
+    blue: { USD: 1.13, KRW: 1580.14 },
+    black: { USD: 1.13, KRW: 1580.14 }
+};
+
+function changeLanguage() {
+    const language = document.getElementById('language-select').value;
+
+    // Change header and product text
+    document.querySelector('h1').textContent = language === 'ko' ? "Kori VAPE" : "Kori VAPE - Vaping Excellence";
+    document.querySelector('h2').textContent = language === 'ko' ? "우리의 전자담배 제품" : "Our Vape Products";
+    document.querySelectorAll('.product h3')[0].textContent = language === 'ko' ? "Emerald Green" : "Emerald Green";
+    document.querySelectorAll('.product h3')[1].textContent = language === 'ko' ? "Royal Blue" : "Royal Blue";
+    document.querySelectorAll('.product h3')[2].textContent = language === 'ko' ? "Matte Black" : "Matte Black";
+    document.querySelectorAll('.product button').forEach(button => {
+        button.textContent = language === 'ko' ? "주문하기" : "Order Now";
+    });
+
+    // Change the welcome section text
+    const welcomeText = language === 'ko' ? {
+        title: "코리에 오신 것을 환영합니다",
+        subtitle: "고객 서비스 및 베이핑 경험이 우리의 최우선 사항입니다"
+    } : {
+        title: "Welcome to Kori Vapes",
+        subtitle: "Customer service & vaping experience are our top priority"
+    };
+
+    document.querySelector('.welcome-section h3').textContent = welcomeText.title;
+    document.querySelector('.welcome-section p').textContent = welcomeText.subtitle;
+}
+
+function changeCurrency() {
+    const currency = document.getElementById('currency-select').value;
+    document.getElementById('price-green').textContent = currency === 'USD' ? `$${prices.green.USD}` : `₩${prices.green.KRW}`;
+    document.getElementById('price-blue').textContent = currency === 'USD' ? `$${prices.blue.USD}` : `₩${prices.blue.KRW}`;
+    document.getElementById('price-black').textContent = currency === 'USD' ? `$${prices.black.USD}` : `₩${prices.black.KRW}`;
+}
+
+function placeOrder() {
+    window.location.href = "https://example.com";
+}
+</script>
+</body>
+</html>
